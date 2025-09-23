@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
+      mobile_no: DataTypes.STRING,
       role: DataTypes.ENUM(
         "SuperAdmin",
         "Manager",
