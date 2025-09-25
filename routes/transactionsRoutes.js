@@ -8,6 +8,12 @@ const {
   deleteTransaction,
 } = require("../controllers/transactionsController");
 const { checkAuth } = require("../middleware/auth");
+const {
+  getMonthlyBalances,
+} = require("../controllers/monthlyBalanceController");
+
+// GET /api/transactions/monthly-balances - Get monthly balances with surplus carry-over
+router.get("/monthly-balances", checkAuth, getMonthlyBalances);
 
 // GET /api/transactions - Get all transactions
 router.get("/", checkAuth, getAllTransactions);

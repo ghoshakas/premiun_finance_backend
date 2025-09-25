@@ -3,7 +3,13 @@ const { Transaction } = require("../models");
 // Controller to handle all transactions
 const getAllTransactions = async (req, res) => {
   try {
+    const { type } = req.query;
+    const where = {};
+    if (type) {
+      where.type = type;
+    }
     const transactions = await Transaction.findAll({
+      where,
       order: [["transactiondate", "DESC"]], // Order by transactiondate, most recent first
     });
     res.status(200).json({
