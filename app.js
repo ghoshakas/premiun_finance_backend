@@ -11,6 +11,8 @@ const centralFundRoutes = require("./routes/centralFundRoutes");
 const contributionPlanRoutes = require("./routes/contributionPlanRoutes");
 const inwardTransactionRoutes = require("./routes/inwardTransactionRoutes");
 const outwardTransactionRoutes = require("./routes/outwardTransactionRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
+const transactionsRoutes = require("./routes/transactionsRoutes");
 
 const app = express();
 
@@ -28,6 +30,8 @@ app.use("/api/central-funds", centralFundRoutes);
 app.use("/api/contribution-plans", contributionPlanRoutes);
 app.use("/api/inward-transactions", inwardTransactionRoutes);
 app.use("/api/outward-transactions", outwardTransactionRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/transactions", transactionsRoutes); // Register transactions routes
 
 // Server configuration
 const PORT = 5000;
