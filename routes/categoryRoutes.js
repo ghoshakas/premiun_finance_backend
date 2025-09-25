@@ -11,15 +11,15 @@ const {
 } = require("../controllers/categoryController");
 const { checkAuth } = require("../middleware/auth");
 
-// Public routes (can be accessed without authentication for basic category listing)
+// Protected routes (require authentication)
 // GET /api/categories - Get all categories with optional filters
-router.get("/", getAllCategories);
+router.get("/", checkAuth, getAllCategories);
 
 // GET /api/categories/type/:type - Get categories by type (expense, income, both, all)
-router.get("/type/:type", getCategoriesByType);
+router.get("/type/:type", checkAuth, getCategoriesByType);
 
 // GET /api/categories/:id - Get single category by ID
-router.get("/:id", getCategoryById);
+router.get("/:id", checkAuth, getCategoryById);
 
 // Protected routes (require authentication)
 // POST /api/categories - Create new category

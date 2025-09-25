@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       mobile_no: DataTypes.STRING,
+      monthly_contributions: DataTypes.STRING,
       role: DataTypes.ENUM(
         "SuperAdmin",
         "Manager",

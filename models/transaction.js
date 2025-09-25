@@ -10,20 +10,32 @@ module.exports = (sequelize, DataTypes) => {
   Transaction.init(
     {
       type: {
-        type: DataTypes.ENUM("inward", "outward"),
-        allowNull: false,
-      },
-      amount: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       description: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      date: {
+      amount: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      account: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      transactiondate: {
         type: DataTypes.DATE,
         allowNull: false,
+      },
+      reference: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
     },
     {
