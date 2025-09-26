@@ -6,12 +6,12 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     // Hash the default password
     const saltRounds = 12;
-    const hashedPassword = await bcrypt.hash("geogo123", saltRounds);
+    const hashedPassword = await bcrypt.hash("Geogo@678ampmDW", saltRounds);
 
     await queryInterface.bulkInsert("users", [
       {
         name: "Geogo Admin",
-        email: "geogo@gmail.com",
+        email: "geogot@gmail.com",
         password: hashedPassword,
         role: "SuperAdmin",
         group_id: null,
